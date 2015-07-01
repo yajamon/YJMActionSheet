@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "YJMActionSheet.h"
 
 @interface ViewController ()
+
+@property (nonatomic) YJMActionSheet *actionSheet;
 
 @end
 
@@ -22,6 +25,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)openActionSheet:(id)sender {
+    YJMAction *cancel = [[YJMAction alloc] initWithTitle:@"cancel" action:^(){
+    }];
+    YJMAction *other = [[YJMAction alloc] initWithTitle:@"other" action:^(){
+    }];
+    self.actionSheet = [[YJMActionSheet alloc] initWithTitle:@"Sheet title"
+                                                           cancelAction:cancel
+                                                      destructiveAction:nil
+                                                            otherAction:other];
+    [self.actionSheet showInViewController:self];
 }
 
 @end
