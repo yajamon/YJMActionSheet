@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YJMAction.h"
 
-@interface YJMActionSheet : NSObject
+@interface YJMActionSheet : NSObject<UIActionSheetDelegate>
+
+@property (nonatomic) UIActionSheet *actionSheet;
+@property (nonatomic) UIAlertController *alertController;
+@property (nonatomic) NSMutableArray *actionList;
+@property (copy) blockButtonTapAction cancelAction;
+
+- (instancetype)init __attribute__((unavailable("init is not available")));
+- (instancetype)initWithTitle:(NSString *)title cancelAction:(YJMAction *)cancel destructiveAction:(YJMAction *)destructive otherAction:(YJMAction *)other;
+- (void) showInViewController:(UIViewController *)targetView;
 
 @end
