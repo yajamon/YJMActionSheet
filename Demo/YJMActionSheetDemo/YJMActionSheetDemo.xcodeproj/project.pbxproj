@@ -14,6 +14,9 @@
 		C23B8D121B43DCDC00184D6E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23B8D111B43DCDC00184D6E /* Images.xcassets */; };
 		C23B8D151B43DCDC00184D6E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23B8D131B43DCDC00184D6E /* LaunchScreen.xib */; };
 		C23B8D211B43DCDC00184D6E /* YJMActionSheetDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C23B8D201B43DCDC00184D6E /* YJMActionSheetDemoTests.m */; };
+		C23B8D2C1B43DFEE00184D6E /* YJMActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = C23B8D2B1B43DFEE00184D6E /* YJMActionSheet.m */; };
+		C256A22E1B43E2CE00F9D516 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23B8D2D1B43E1DB00184D6E /* UIKit.framework */; };
+		C256A2311B43E30800F9D516 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C256A22F1B43E2E300F9D516 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		C23B8D1A1B43DCDC00184D6E /* YJMActionSheetDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YJMActionSheetDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23B8D1F1B43DCDC00184D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C23B8D201B43DCDC00184D6E /* YJMActionSheetDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJMActionSheetDemoTests.m; sourceTree = "<group>"; };
+		C23B8D2A1B43DFEE00184D6E /* YJMActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YJMActionSheet.h; path = ../../YJMActionSheet.h; sourceTree = "<group>"; };
+		C23B8D2B1B43DFEE00184D6E /* YJMActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YJMActionSheet.m; path = ../../YJMActionSheet.m; sourceTree = "<group>"; };
+		C23B8D2D1B43E1DB00184D6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C256A22F1B43E2E300F9D516 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C256A2311B43E30800F9D516 /* Foundation.framework in Frameworks */,
+				C256A22E1B43E2CE00F9D516 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,9 @@
 		C23B8CF81B43DCDC00184D6E = {
 			isa = PBXGroup;
 			children = (
+				C23B8D2F1B43E27400184D6E /* frameworks */,
+				C23B8D2A1B43DFEE00184D6E /* YJMActionSheet.h */,
+				C23B8D2B1B43DFEE00184D6E /* YJMActionSheet.m */,
 				C23B8D031B43DCDC00184D6E /* YJMActionSheetDemo */,
 				C23B8D1D1B43DCDC00184D6E /* YJMActionSheetDemoTests */,
 				C23B8D021B43DCDC00184D6E /* Products */,
@@ -117,6 +129,15 @@
 				C23B8D1F1B43DCDC00184D6E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C23B8D2F1B43E27400184D6E /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C256A22F1B43E2E300F9D516 /* Foundation.framework */,
+				C23B8D2D1B43E1DB00184D6E /* UIKit.framework */,
+			);
+			name = frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +242,7 @@
 			files = (
 				C23B8D0D1B43DCDC00184D6E /* ViewController.m in Sources */,
 				C23B8D0A1B43DCDC00184D6E /* AppDelegate.m in Sources */,
+				C23B8D2C1B43DFEE00184D6E /* YJMActionSheet.m in Sources */,
 				C23B8D071B43DCDC00184D6E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +438,7 @@
 				C23B8D261B43DCDC00184D6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C23B8D271B43DCDC00184D6E /* Build configuration list for PBXNativeTarget "YJMActionSheetDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +447,7 @@
 				C23B8D291B43DCDC00184D6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
