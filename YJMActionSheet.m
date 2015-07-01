@@ -86,4 +86,10 @@
     }
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex < self.actionList.count) {
+        blockButtonTapAction action = (blockButtonTapAction)[self.actionList objectAtIndex:buttonIndex];
+        action();
+    }
+}
 @end
