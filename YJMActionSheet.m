@@ -36,6 +36,11 @@
                     cancel.actionBlock();
                 }]];
             }
+            if (destructive) {
+                [self.alertController addAction:[UIAlertAction actionWithTitle:destructive.title style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+                    destructive.actionBlock();
+                }]];
+            }
             
         } else {
             __weak YJMActionSheet *wself = self;
