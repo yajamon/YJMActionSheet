@@ -17,6 +17,7 @@
         NSString *cancelTitle = nil;
         NSString *destructiveTitle = nil;
         NSString *otherTitle = nil;
+        self.actionList = [[NSMutableArray alloc] init];
         if (cancel) {
             cancelTitle = cancel.title;
         }
@@ -78,9 +79,8 @@
 }
 
 #pragma mark - <UIActionSheetDelegate>
-
+//FIXME: why not run???;
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet {
-    // cancelボタンが押された時の処理
     if (self.cancelAction) {
         self.cancelAction();
     }
@@ -90,6 +90,13 @@
     if (buttonIndex < self.actionList.count) {
         blockButtonTapAction action = (blockButtonTapAction)[self.actionList objectAtIndex:buttonIndex];
         action();
+    } else if (buttonIndex == self.actionList.count) {
+        //FIXME: not run actionSheetCancel.
+        if (self.cancelAction) {
+            self.cancelAction();
+        }
     }
 }
+
+
 @end
