@@ -14,9 +14,9 @@
 {
     self = [super init];
     if (self) {
-        NSString *cancelTitle = @"";
-        NSString *destructiveTitle = @"";
-        NSString *otherTitle = @"";
+        NSString *cancelTitle = nil;
+        NSString *destructiveTitle = nil;
+        NSString *otherTitle = nil;
         if (cancel) {
             cancelTitle = cancel.title;
         }
