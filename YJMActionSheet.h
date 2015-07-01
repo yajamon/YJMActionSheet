@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YJMAction.h"
 
-@interface YJMActionSheet : NSObject
+@interface YJMActionSheet : NSObject<UIActionSheetDelegate>
+
+@property (nonatomic) UIActionSheet *actionSheet;
+@property (nonatomic) UIAlertController *alertController;
+@property (nonatomic) NSMutableArray *actionList;
+@property (nonatomic) NSMutableArray *cancelAction;
+
+- (instancetype)init __attribute__((unavailable("init is not available")));
 
 @end
