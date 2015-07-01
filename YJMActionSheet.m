@@ -48,9 +48,8 @@
             }
             
         } else {
-            __weak YJMActionSheet *wself = self;
             self.actionSheet = [[UIActionSheet alloc] initWithTitle:title
-                                                           delegate:wself
+                                                           delegate:self
                                                   cancelButtonTitle:cancelTitle
                                              destructiveButtonTitle:destructiveTitle
                                                   otherButtonTitles:otherTitle, nil];
