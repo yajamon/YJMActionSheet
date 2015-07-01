@@ -31,6 +31,11 @@
             self.alertController = [UIAlertController alertControllerWithTitle:title
                                                                        message:nil
                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
+            if (cancel) {
+                [self.alertController addAction:[UIAlertAction actionWithTitle:cancel.title style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+                    cancel.actionBlock();
+                }]];
+            }
             
         } else {
             __weak YJMActionSheet *wself = self;
