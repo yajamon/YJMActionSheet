@@ -17,6 +17,7 @@
 		C23B8D2C1B43DFEE00184D6E /* YJMActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = C23B8D2B1B43DFEE00184D6E /* YJMActionSheet.m */; };
 		C256A22E1B43E2CE00F9D516 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23B8D2D1B43E1DB00184D6E /* UIKit.framework */; };
 		C256A2311B43E30800F9D516 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C256A22F1B43E2E300F9D516 /* Foundation.framework */; };
+		C256A2341B43F7FE00F9D516 /* YJMAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C256A2331B43F7FE00F9D516 /* YJMAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		C23B8D2B1B43DFEE00184D6E /* YJMActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YJMActionSheet.m; path = ../../YJMActionSheet.m; sourceTree = "<group>"; };
 		C23B8D2D1B43E1DB00184D6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C256A22F1B43E2E300F9D516 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C256A2321B43F7FE00F9D516 /* YJMAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YJMAction.h; path = ../../YJMAction.h; sourceTree = "<group>"; };
+		C256A2331B43F7FE00F9D516 /* YJMAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YJMAction.m; path = ../../YJMAction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				C23B8D2F1B43E27400184D6E /* frameworks */,
 				C23B8D2A1B43DFEE00184D6E /* YJMActionSheet.h */,
 				C23B8D2B1B43DFEE00184D6E /* YJMActionSheet.m */,
+				C256A2321B43F7FE00F9D516 /* YJMAction.h */,
+				C256A2331B43F7FE00F9D516 /* YJMAction.m */,
 				C23B8D031B43DCDC00184D6E /* YJMActionSheetDemo */,
 				C23B8D1D1B43DCDC00184D6E /* YJMActionSheetDemoTests */,
 				C23B8D021B43DCDC00184D6E /* Products */,
@@ -244,6 +249,7 @@
 				C23B8D0A1B43DCDC00184D6E /* AppDelegate.m in Sources */,
 				C23B8D2C1B43DFEE00184D6E /* YJMActionSheet.m in Sources */,
 				C23B8D071B43DCDC00184D6E /* main.m in Sources */,
+				C256A2341B43F7FE00F9D516 /* YJMAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YJMActionSheetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -380,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YJMActionSheetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
