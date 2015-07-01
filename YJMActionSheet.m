@@ -57,6 +57,9 @@
             if (cancel) {
                 self.cancelAction = cancel.actionBlock;
             }
+            if (destructive) {
+                [self.actionList addObject:destructive.actionBlock];
+            }
         }
     }
     return self;
