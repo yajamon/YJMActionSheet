@@ -60,6 +60,9 @@
             if (destructive) {
                 [self.actionList addObject:destructive.actionBlock];
             }
+            if (other) {
+                [self.actionList addObject:other.actionBlock];
+            }
         }
     }
     return self;
