@@ -14,7 +14,7 @@
 @property (nonatomic) UIActionSheet *actionSheet;
 @property (nonatomic) UIAlertController *alertController;
 @property (nonatomic) NSMutableArray *actionList;
-@property (nonatomic) NSMutableArray *cancelAction;
+@property (copy) blockButtonTapAction cancelAction;
 
 - (instancetype)init __attribute__((unavailable("init is not available")));
 - (instancetype)initWithTitle:(NSString *)title cancelAction:(YJMAction *)cancel destructiveAction:(YJMAction *)destructive otherAction:(YJMAction *)other;
