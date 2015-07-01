@@ -44,4 +44,14 @@
     return self;
 }
 
+- (void) showInViewController:(UIViewController *)target
+{
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (iOSVersion >= 8.0f) {
+        [target presentViewController:self.alertController animated:YES completion:nil ];
+    } else {
+        [self.actionSheet showInView:target.view];
+    }
+}
+
 @end
