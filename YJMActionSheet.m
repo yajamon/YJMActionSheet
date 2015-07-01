@@ -54,6 +54,9 @@
                                                   cancelButtonTitle:cancelTitle
                                              destructiveButtonTitle:destructiveTitle
                                                   otherButtonTitles:otherTitle, nil];
+            if (cancel) {
+                self.cancelAction = cancel.actionBlock;
+            }
         }
     }
     return self;
@@ -66,6 +69,15 @@
         [target presentViewController:self.alertController animated:YES completion:nil ];
     } else {
         [self.actionSheet showInView:target.view];
+    }
+}
+
+#pragma mark - <UIActionSheetDelegate>
+
+- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
+    // cancelボタンが押された時の処理
+    if (self.cancelAction) {
+        self.cancelAction();
     }
 }
 
