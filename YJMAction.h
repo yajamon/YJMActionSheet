@@ -16,5 +16,6 @@ typedef void (^blockButtonTapAction) ();
 @property (copy) blockButtonTapAction actionBlock;
 
 - (instancetype)init __attribute__((unavailable("init is not available")));
+- (instancetype)initWithTitle:(NSString *)title action:(blockButtonTapAction) action;
 
 @end
