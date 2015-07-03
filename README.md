@@ -21,6 +21,16 @@ $ open YJMActionSheet/Demo/YJMActionSheetDemo/YJMActionSheetDemo.xcodeproj
 ## Usage
 
 ## Install
+Add the following files to your project.
+- YJMAction.h
+- YJMAction.m
+- YJMActionSheet.h
+- YJMActionSheet.m
+
+Import header file.
+```objective-c
+#import "YJMActionSheet.h"
+```
 
 ## Contribution
 
