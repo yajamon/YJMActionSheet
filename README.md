@@ -14,6 +14,10 @@ $ open YJMActionSheet/Demo/YJMActionSheetDemo/YJMActionSheetDemo.xcodeproj
 
 ## Requirement
 
+### Frameworks
+- Foundation.framework
+- UIKit.framework
+
 ## Usage
 
 ## Install
