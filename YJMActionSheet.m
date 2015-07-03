@@ -78,6 +78,16 @@
     }
 }
 
+- (void) addAction:(YJMAction *)action {
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (iOSVersion >= 8.0f) {
+        //
+    } else {
+        [self.actionSheet addButtonWithTitle:action.title];
+        [self.actionList addObject:action.actionBlock];
+    }
+}
+
 #pragma mark - <UIActionSheetDelegate>
 //FIXME: why not run???;
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet {
