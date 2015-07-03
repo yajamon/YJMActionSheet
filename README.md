@@ -5,6 +5,11 @@ UIActionSheet is deprecated in iOS8.3. This class is selectively used UIActionSh
 
 ## Demo
 
+```bash
+$ git clone https://github.com/yajamon/YJMActionSheet.git
+$ open YJMActionSheet/Demo/YJMActionSheetDemo/YJMActionSheetDemo.xcodeproj
+```
+
 ## VS. 
 
 ## Requirement
