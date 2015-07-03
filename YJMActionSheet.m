@@ -78,6 +78,18 @@
     }
 }
 
+- (void) addAction:(YJMAction *)newAction {
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (iOSVersion >= 8.0f) {
+        [self.alertController addAction:[UIAlertAction actionWithTitle:newAction.title style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            newAction.actionBlock();
+        }]];
+    } else {
+        [self.actionSheet addButtonWithTitle:newAction.title];
+        [self.actionList addObject:newAction.actionBlock];
+    }
+}
+
 #pragma mark - <UIActionSheetDelegate>
 //FIXME: why not run???;
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet {

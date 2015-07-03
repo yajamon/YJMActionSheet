@@ -36,6 +36,11 @@
                                                            cancelAction:cancel
                                                       destructiveAction:nil
                                                             otherAction:other];
+    
+    YJMAction *addAction = [[YJMAction alloc] initWithTitle:@"add button" action:^(){
+    }];
+    [self.actionSheet addAction:addAction];
+    
     [self.actionSheet showInViewController:self];
 }
 
