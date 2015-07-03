@@ -19,6 +19,6 @@
 - (instancetype)init __attribute__((unavailable("init is not available")));
 - (instancetype)initWithTitle:(NSString *)title cancelAction:(YJMAction *)cancel destructiveAction:(YJMAction *)destructive otherAction:(YJMAction *)other;
 - (void) showInViewController:(UIViewController *)targetView;
-- (void) addAction:(YJMAction *)action;
+- (void) addAction:(YJMAction *)newAction;
 
 @end
