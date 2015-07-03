@@ -20,6 +20,28 @@ $ open YJMActionSheet/Demo/YJMActionSheetDemo/YJMActionSheetDemo.xcodeproj
 
 ## Usage
 
+```objective-c
+// bound method
+- (IBAction)openActionSheet:(id)sender {
+    // create title and action
+    YJMAction *cancel = [[YJMAction alloc] initWithTitle:@"cancel" action:^(){
+        // write processing when the user taps cancel
+    }];
+    YJMAction *other = [[YJMAction alloc] initWithTitle:@"other" action:^(){
+        // write processing when the user taps other
+    }];
+    
+    // create ActionSheet instance
+    self.actionSheet = [[YJMActionSheet alloc] initWithTitle:@"Sheet title"
+                                                cancelAction:cancel
+                                           destructiveAction:nil
+                                                 otherAction:other];
+
+    // show ActionSheet
+    [self.actionSheet showInViewController:self];
+}
+```
+
 ## Install
 Add the following files to your project.
 - YJMAction.h
