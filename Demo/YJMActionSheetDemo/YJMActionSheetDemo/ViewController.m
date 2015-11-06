@@ -39,13 +39,15 @@
     }];
     self.actionSheet = [[YJMActionSheet alloc] initWithTitle:@"Sheet title"
                                                            cancelAction:nil
-                                                      destructiveAction:destructive
+                                                      destructiveAction:nil
                                                             otherAction:other];
     
     YJMAction *addAction = [[YJMAction alloc] initWithTitle:@"add button" action:^(){
         NSLog(@"add tapped");
     }];
     [self.actionSheet addAction:addAction];
+    
+    [self.actionSheet addDestructiveAction:destructive];
     
     [self.actionSheet addCancelAction:cancel];
     
