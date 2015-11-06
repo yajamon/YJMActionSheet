@@ -28,13 +28,15 @@
 }
 
 - (IBAction)openActionSheet:(id)sender {
+    YJMAction *destructive = [[YJMAction alloc] initWithTitle:@"destructive" action:^(){
+    }];
     YJMAction *cancel = [[YJMAction alloc] initWithTitle:@"cancel" action:^(){
     }];
     YJMAction *other = [[YJMAction alloc] initWithTitle:@"other" action:^(){
     }];
     self.actionSheet = [[YJMActionSheet alloc] initWithTitle:@"Sheet title"
                                                            cancelAction:cancel
-                                                      destructiveAction:nil
+                                                      destructiveAction:destructive
                                                             otherAction:other];
     
     YJMAction *addAction = [[YJMAction alloc] initWithTitle:@"add button" action:^(){
