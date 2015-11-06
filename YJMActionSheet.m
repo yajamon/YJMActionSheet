@@ -91,6 +91,21 @@
     }
 }
 
+- (void) addCancelAction:(YJMAction *)newAction {
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (iOSVersion >= 8.0f) {
+        [self.alertController addAction:[UIAlertAction actionWithTitle:newAction.title style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+            newAction.actionBlock();
+        }]];
+    } else {
+        NSInteger buttonIndex = [self.actionSheet addButtonWithTitle:newAction.title];
+        [self.actionList addObject:newAction.actionBlock];
+        
+        self.actionSheet.cancelButtonIndex = buttonIndex;
+    }
+}
+
+
 #pragma mark - <UIActionSheetDelegate>
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet {
     NSInteger actionIndex = self.actionSheet.cancelButtonIndex;
