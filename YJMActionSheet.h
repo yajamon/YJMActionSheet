@@ -21,6 +21,7 @@
 - (void) showInViewController:(UIViewController *)targetView;
 - (void) addAction:(YJMAction *)newAction;
 - (void) addCancelAction:(YJMAction *)newAction;
+- (void) addDestructiveAction:(YJMAction *)newAction;
 
 
 @end
