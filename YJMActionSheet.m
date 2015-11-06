@@ -54,15 +54,16 @@
                                                   cancelButtonTitle:cancelTitle
                                              destructiveButtonTitle:destructiveTitle
                                                   otherButtonTitles:otherTitle, nil];
-            if (cancel) {
-                self.cancelAction = cancel.actionBlock;
-            }
             if (destructive) {
                 [self.actionList addObject:destructive.actionBlock];
             }
             if (other) {
                 [self.actionList addObject:other.actionBlock];
             }
+            if (cancel) {
+                [self.actionList addObject:cancel.actionBlock];
+            }
+
         }
     }
     return self;
@@ -90,24 +91,49 @@
     }
 }
 
-#pragma mark - <UIActionSheetDelegate>
-//FIXME: why not run???;
-- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
-    if (self.cancelAction) {
-        self.cancelAction();
+- (void) addCancelAction:(YJMAction *)newAction {
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (iOSVersion >= 8.0f) {
+        [self.alertController addAction:[UIAlertAction actionWithTitle:newAction.title style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+            newAction.actionBlock();
+        }]];
+    } else {
+        NSInteger buttonIndex = [self.actionSheet addButtonWithTitle:newAction.title];
+        [self.actionList addObject:newAction.actionBlock];
+        
+        self.actionSheet.cancelButtonIndex = buttonIndex;
     }
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex < self.actionList.count) {
-        blockButtonTapAction action = (blockButtonTapAction)[self.actionList objectAtIndex:buttonIndex];
-        action();
-    } else if (buttonIndex == self.actionList.count) {
-        //FIXME: not run actionSheetCancel.
-        if (self.cancelAction) {
-            self.cancelAction();
-        }
+- (void)addDestructiveAction:(YJMAction *)newAction {
+    float iOSVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (iOSVersion >= 8.0f) {
+        [self.alertController addAction:[UIAlertAction actionWithTitle:newAction.title style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+            newAction.actionBlock();
+        }]];
+    } else {
+        NSInteger buttonIndex = [self.actionSheet addButtonWithTitle:newAction.title];
+        [self.actionList addObject:newAction.actionBlock];
+        
+        self.actionSheet.destructiveButtonIndex = buttonIndex;
     }
+}
+
+
+#pragma mark - <UIActionSheetDelegate>
+- (void)actionSheetCancel:(UIActionSheet *)actionSheet {
+    NSInteger actionIndex = self.actionSheet.cancelButtonIndex;
+    if (actionIndex < 0) {
+        return;
+    }
+    
+    blockButtonTapAction action = (blockButtonTapAction)self.actionList[actionIndex];
+    action();
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    blockButtonTapAction action = (blockButtonTapAction)self.actionList[buttonIndex];
+    action();
 }
 
 
