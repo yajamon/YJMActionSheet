@@ -28,16 +28,22 @@
 }
 
 - (IBAction)openActionSheet:(id)sender {
+    YJMAction *destructive = [[YJMAction alloc] initWithTitle:@"destructive" action:^(){
+        NSLog(@"destructive tapped");
+    }];
     YJMAction *cancel = [[YJMAction alloc] initWithTitle:@"cancel" action:^(){
+        NSLog(@"cancel tapped");
     }];
     YJMAction *other = [[YJMAction alloc] initWithTitle:@"other" action:^(){
+        NSLog(@"other tapped");
     }];
     self.actionSheet = [[YJMActionSheet alloc] initWithTitle:@"Sheet title"
                                                            cancelAction:cancel
-                                                      destructiveAction:nil
+                                                      destructiveAction:destructive
                                                             otherAction:other];
     
     YJMAction *addAction = [[YJMAction alloc] initWithTitle:@"add button" action:^(){
+        NSLog(@"add tapped");
     }];
     [self.actionSheet addAction:addAction];
     
