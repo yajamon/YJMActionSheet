@@ -38,7 +38,7 @@
         NSLog(@"other tapped");
     }];
     self.actionSheet = [[YJMActionSheet alloc] initWithTitle:@"Sheet title"
-                                                           cancelAction:cancel
+                                                           cancelAction:nil
                                                       destructiveAction:destructive
                                                             otherAction:other];
     
@@ -46,6 +46,8 @@
         NSLog(@"add tapped");
     }];
     [self.actionSheet addAction:addAction];
+    
+    [self.actionSheet addCancelAction:cancel];
     
     [self.actionSheet showInViewController:self];
 }
